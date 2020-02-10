@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  mainEthNode:
+    container_name: EthClientGo
+    image: ethereum/client-go
+    command: "--rpc --rpcaddr '0.0.0.0' --rpcport '9000'"
+    restart: always
+    environment:
+      VIRTUAL_HOST: "rawrpc.metamask.io"
+      VIRTUAL_PORT: "9000"
+    volumes:
+      - /../PathToGoFiles:/root/.ethereum
+    ports:
+      - "9000"
