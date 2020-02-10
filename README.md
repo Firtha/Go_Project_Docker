@@ -2,13 +2,21 @@
 Docker repo of the project
 
 ## Good use process
-For each tools, note the version used.
+For each tools and each containers, note the version used.
+
+### Host machine
 1. Docker : 19.03.1
-2. Docker Engine : 18.+
+2. Docker Engine : > 18.xx
 3. Docker-compose : 1.24.1
-4. Go : 
-5. Nodejs : 
-6. ReactJs : 
+
+### Go container
+1. Go : > 1.10.xx
+
+### Front container
+1. Nodejs : ??
+2. ReactJs : ??
+
+More tools will probably be added in the futur.
 
 ## Instructions
 1. First of all, install docker : https://docs.docker.com/docker-for-windows/
