@@ -1,6 +1,15 @@
 # Go_Project_Docker
 Docker repo of the project
 
+## Good use process
+For each tools, note the version used.
+1. Docker :
+2. Docker-compose :
+3. Go : 
+4. Nodejs : 
+5. ReactJs : 
+6. More incoming ?
+
 ## Instructions
 1. First of all, install docker : https://docs.docker.com/docker-for-windows/
 2. Install Go Ethereum : https://geth.ethereum.org/downloads/
