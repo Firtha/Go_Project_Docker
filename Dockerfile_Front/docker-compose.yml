@@ -1,14 +1,39 @@
-version: '3.7'
-
+version: '3'
 services:
+
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+        - /data:/data/db
+
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+    depends_on:
+      - mongo
+
+
   nodeWebSrv:
     build: .
     container_name: nodeWebSrv
     image: node/custom
     command: "npm run start"
-    environment: 
+    environment:
       - NPM_CONFIG_LOGLEVEL=info
     volumes:
       - /usr/app/node_modules
     ports:
       - "8080:8080"
+    depends_on:
+      - mongo
