@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-  mainEthNode:
+  ethNode:
     container_name: EthClientGo
     image: ethereum/client-go
     command: "--rpc --rpcaddr '0.0.0.0' --rpcport '9000'"
