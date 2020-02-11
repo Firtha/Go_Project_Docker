@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  nodeWebSrv:
+    build: .
+    container_name: nodeWebSrv
+    image: node/custom
+    command: "npm run start"
+    environment: 
+      - NPM_CONFIG_LOGLEVEL=info
+    volumes:
+      - /usr/app/node_modules
+    ports:
+      - "8080:8080"
