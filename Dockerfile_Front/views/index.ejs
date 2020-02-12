@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>My Node App</title>
+</head>
+
+<body>
+  <form>
+    <label for="ethAddr">Name</label>
+    <input type="text" name="ethAddr" id="ethAddr">
+    <input type="button" value="Search" onclick="Display_data()">
+  </form>
+
+  <h4>names:</h4>
+  <ul id='personalData'>
+    <li id='firstname'></li>
+    <li id='lastname'></li>
+  </ul>
+
+</body>
+
+<script>
+
+  function Display_data(){
+    var ethAddr=document.getElementById("ethAddr").value;
+    var item= db.IdentitySchema.find( { publickeyeth:ethAddr } )
+    document.getElementById("firstname").innerHTML=item.Firstname
+    document.getElementById("lastname").innerHTML=item.Lastname
+
+  }
+</script>
+</html>

@@ -1,13 +1,16 @@
 # Build command line :
 # docker build -t node/custom .
-FROM node:7.7.2-alpine
+FROM node:10
 
-WORKDIR /usr/app
+WORKDIR /app
 
-COPY package.json .
+COPY package.json package.json
 RUN npm install --quiet
 
-COPY app.js .
-COPY index.html .
+
+COPY . .
+RUN npm install -g nodemon
+CMD [ "nodemon", "index.js" ]
+RUN npm install -g mongoose
 
 RUN chmod 775 *
